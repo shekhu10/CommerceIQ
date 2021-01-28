@@ -27,7 +27,7 @@ async function updateDB(storeDB) {
 }
 
 
-// used to sord on the column in asc or dec order
+// used to sord on the column in asc or des order
 async function sorting(_sort, _order) {
     return new Promise(function (resolve, reject) {
         let ans;
@@ -36,7 +36,7 @@ async function sorting(_sort, _order) {
                 return a[_sort] - b[_sort];
             });
         }
-        else if (_order == "dec") {
+        else if (_order == "des") {
             ans = storeDB.sort(function (a, b) {
                 return b[_sort] - a[_sort];
             });

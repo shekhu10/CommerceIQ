@@ -6,6 +6,82 @@
     <title>Document</title>
 </head>
 <body>
-<h1>  do api calls </h1>
+    <h3> Additional functionalities</h3>
+    <strong>1. </strong> Not allowed to enter duplicate id.<br>
+    <strong>2. </strong> Not allowed to enter id other than Integer. <br>
+    <strong>3. </strong> Sorting allowed on all parameters. => Get Request No. 4<br>
+<h1> API calls </h1>
+<h2> get requests</h2>
+<strong>1. </strong>  https://shekhar-node-deploy.herokuapp.com/posts/:id <br><br>
+Gives result of specific ID in JSON ----- {:id} as 1,2,3...   (In Integer) <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts/2    <br><br><br><br>
+
+
+<strong>2. </strong> https://shekhar-node-deploy.herokuapp.com/posts/ <br><br>
+gives all posts stored in store.json <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts/   <br><br><br><br>
+
+<strong>3. </strong> https://shekhar-node-deploy.herokuapp.com/posts?title=title1&author=CIQ <br><br> 
+Gives all posts with the specific title && specfic author  <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts?title=title1&author=CIQ3    <br><br><br><br>
+
+<strong>4. </strong> https://shekhar-node-deploy.herokuapp.com/posts?_sort=[1]&_order=[2]  <br><br>
+gives all posts by sorting ----sort on the basis of [1], and order on the basis of [2] <br>
+    [1] => id, views, reviews  <br>
+    [2] => asc, des (plz match string while testing)  <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts?_sort=views&_order=des   <br><br><br><br>
+    
+
+<strong>5. </strong> https://shekhar-node-deploy.herokuapp.com/posts?q=value <br><br>
+gives all posts where by filtering on q  <br>
+q => id, title, author, views, reviews  <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts?title=title1   <br><br><br><br>
+
+<h2> post request </h2>  
+
+https://shekhar-node-deploy.herokuapp.com/posts/ <br><br>
+
+ <strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts/   <br><br>
+ <strong>data to be in JSON </strong>  <br><br>
+ {
+    "id": 1,
+    "title": "title1",
+    "author": "CIQ3",
+    "views": 101,
+    "reviews": 78
+}
+ <br><br><br><br>
+
+<h2> patch request </h2>
+https://shekhar-node-deploy.herokuapp.com/posts/:id  <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts/2    <br><br>
+<strong>data to be in JSON -- ID not allowed to update </strong>  <br><br>
+{
+    "title": "title1",
+    "author": "CIQ3",
+    "views": 101,
+    "reviews": 78
+}
+<br><br> <strong>Note</strong> id should not be given in JSON data else failure message returned
+<br><br><br><br>
+
+<h2> delete request </h2>
+https://shekhar-node-deploy.herokuapp.com/posts/:id  <br><br>
+delete the post of given id <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/posts/2    <br><br><br><br>
+
+<h2> put request </h2>
+https://shekhar-node-deploy.herokuapp.com/authors/:id   <br><br>
+Updates / adds the author in author.json <br><br>
+<strong>sample - </strong> https://shekhar-node-deploy.herokuapp.com/authors/2    <br><br>
+<strong>data to be in JSON </strong>  <br><br>
+{
+   "id": 1,
+   "title": "title1",
+   "author": "CIQ3",
+   "views": 101,
+   "reviews": 78
+}
+
 </body>
 </html>
